@@ -1,3 +1,5 @@
+import founderImg from '../assets/team/hm_photo1.png';
+
 export default function About() {
   return (
     <div className="min-h-screen bg-white">
@@ -88,11 +90,7 @@ export default function About() {
             </div>
             <div className="order-1 lg:order-2">
               <div className="relative aspect-square overflow-hidden rounded-lg shadow-xl">
-                <img
-                  src="/src/assets/team/hm_photo1.png"
-                  alt="Megha & Hemant Bothe - HealthMobilia Founders"
-                  className="w-full h-full object-cover"
-                />
+                <img src={founderImg} alt="Founder" className="w-full h-full object-cover" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
                   <p className="text-lg font-semibold"></p>
                   <p className="text-sm text-gray-200"></p>
