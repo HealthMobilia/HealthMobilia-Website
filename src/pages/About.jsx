@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa';
 import heroVisual from "../assets/about/aboutus-hero.png";
 import hemantPhoto from "../assets/team/hemant.jpg"; 
-import meghaPhoto from "../assets/team/megha1.png";
+import meghaPhoto from "../assets/team/megha.png";
 
 export default function About() {
   // Data for founders

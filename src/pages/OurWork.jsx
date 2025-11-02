@@ -229,6 +229,21 @@ export default function OurWork() {
         </div>
       </section>
 
+      {/* Guiding Philosophy */}
+      <section className="bg-white px-6 py-24 md:py-32">
+        <div className="max-w-4xl mx-auto text-center">
+            <blockquote className="text-gray-800 italic text-2xl md:text-3xl leading-relaxed mb-6 relative">
+                <span className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-8xl font-serif text-gray-200 opacity-70">"</span>
+                <p className="relative z-10">
+                  The true value of data is not in its collection, but in its capacity to inform action transforming hindsight into foresight.
+                </p>
+            </blockquote>
+            <p className="text-lg font-semibold text-black mt-10">
+              — Our Guiding Philosophy
+            </p>
+        </div>
+      </section>
+
     </div>
   );
 }
