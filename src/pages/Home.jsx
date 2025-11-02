@@ -6,8 +6,8 @@ export default function Home() {
   // High-level impact stats
   const impactStats = [
     {
-      value: 11,
-      suffix: ' Lakh +',
+      value: 1.1,
+      suffix: 'M +',
       label: "Population Coverage"
     },
     {
