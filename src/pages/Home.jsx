@@ -1,9 +1,36 @@
+import { useState, useCallback } from 'react';
 import { FaArrowRight, FaChartLine, FaDatabase, FaUsersViewfinder } from 'react-icons/fa6';
 import StatCounter from '../components/StatCounter'; 
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim"; 
+import particlesConfig from '../components/particles-config'; 
 
 export default function Home() {
   
-  // High-level impact stats
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine);
+  }, []);
+
+  const [activeTab, setActiveTab] = useState(0);
+
+  const processSteps = [
+    {
+      name: "1. Capture",
+      icon: <FaDatabase className="w-7 h-7 md:w-8 md:h-8" />,
+      description: "We deploy robust systems to capture structured health data from the field, ensuring integrity from the source."
+    },
+    {
+      name: "2. Analyze",
+      icon: <FaChartLine className="w-7 h-7 md:w-8 md:h-8" />,
+      description: "Our analytics engine processes the data to identify patterns, correlations, and early warning signs."
+    },
+    {
+      name: "3. Act",
+      icon: <FaUsersViewfinder className="w-7 h-7 md:w-8 md:h-8" />,
+      description: "We provide officials with clear, visualized insights, empowering them to take targeted, evidence-based preventive action."
+    }
+  ];
+
   const impactStats = [
     {
       value: 1.1,
@@ -25,97 +52,112 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black antialiased">
       
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+      {/* 1. Hero Section */}
+      <section className="relative min-h-[85vh] md:h-screen flex items-center justify-center text-center text-white overflow-hidden bg-black">
         
-        {/* Animated Gradient Background */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black"></div>
-          <div 
-            className="absolute h-[800px] w-[800px] bg-[radial-gradient(circle_at_center,_rgba(100,100,100,0.3),_rgba(0,0,0,0))] animate-[spin_20s_linear_infinite]"
-            style={{ top: 'calc(50% - 400px)', left: 'calc(50% - 400px)' }}
-          />
-        </div>
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          options={particlesConfig}
+          className="absolute inset-0 z-0" 
+        />
 
-        {/* Content */}
         <div className="relative z-10 p-6 flex flex-col items-center">
-          <h1 className="text-6xl md:text-8xl font-extrabold leading-tight tracking-tight">
-            From Health Data
-            <span className="block mt-2 text-gray-400">
-              to Health Decisions.
+          <h1 className="leading-tight tracking-tight">
+            <span className="block text-white whitespace-nowrap">
+              <span className="font-normal opacity-90 text-2xl md:text-5xl align-middle mr-1 md:mr-2">From </span>
+              <span className="font-extrabold text-4xl md:text-8xl align-middle">Health Data</span>
+            </span>
+            <span className="block mt-1 md:mt-2 text-gray-400 whitespace-nowrap">
+              <span className="font-normal opacity-90 text-2xl md:text-5xl align-middle mr-1 md:mr-2">to </span>
+              <span className="font-extrabold text-4xl md:text-8xl align-middle">Health Decisions.</span>
             </span>
           </h1>
 
-          <p className="mt-8 text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             We empower public health systems to turn raw community data into predictive insights and proactive, life-saving interventions.
           </p>
-
-          {/* CTAs */}
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/work" className="inline-flex items-center justify-center bg-white text-black px-6 py-3 text-base font-semibold hover:bg-gray-200 transition-colors rounded-lg">
+          <div className="mt-12 w-full flex flex-row gap-2 sm:gap-4 justify-center">
+            <a href="/work" className="inline-flex items-center justify-center bg-white text-black px-4 py-3 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold hover:bg-gray-200 transition-colors rounded-lg">
               See Our Work
-              <FaArrowRight className="w-4 h-4 ml-3" />
+              <FaArrowRight className="w-4 h-4 ml-2 sm:ml-3" />
             </a>
-            <a href="/collaborate" className="inline-flex items-center justify-center border-2 border-gray-400 text-gray-200 px-6 py-3 text-base font-semibold hover:bg-gray-800 transition-colors rounded-lg">
+            <a href="/collaborate" className="inline-flex items-center justify-center border-2 border-gray-400 text-gray-200 px-4 py-3 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold hover:bg-gray-800 transition-colors rounded-lg">
               Start a Partnership
             </a>
           </div>
         </div>
       </section>
 
-      {/* Impact Stats Section */}
-      <section className="bg-white text-black px-6 py-20 md:py-24">
+      {/* 2. Impact Stats Section */}
+      <section className="relative z-10 bg-white text-black px-6 py-16 md:py-24">
         <div className="max-w-6xl mx-auto">
             <h2 className="text-base font-semibold text-gray-500 uppercase tracking-wider text-center mb-12">
                 Impact from our Pilot Program
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="flex flex-col md:grid md:grid-cols-3 gap-10 md:gap-8">
                 {impactStats.map((stat) => (
-                    <div key={stat.label} className="py-4 border-l-4 border-gray-200 md:border-l-0">
-                        <p className="text-7xl font-extrabold text-black mb-2">
+                    <div key={stat.label} className="flex flex-row items-center gap-4 md:flex-col md:items-center md:gap-0 md:text-center md:py-4">
+                        <p className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-black md:mb-2 w-2/5 md:w-auto text-left sm:text-center">
                           <StatCounter value={stat.value} duration={stat.value > 10 ? 2.5 : 1.5} />
                           {stat.suffix}
                         </p>
-                        <p className="text-lg font-medium text-gray-600">{stat.label}</p>
+                        <p className="text-base md:text-lg font-medium text-gray-600 text-left md:text-center w-3/5 md:w-auto">{stat.label}</p>
                     </div>
                 ))}
             </div>
         </div>
       </section>
       
-      {/* Our Process Section */}
-      <section className="bg-black text-white px-6 py-24 md:py-32">
+      {/* 3. Our Process Section (Mobile Tabs) */}
+      <section className="relative z-10 bg-black text-white px-6 py-20 md:py-32">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4">Our Intelligence Loop</h2>
-            <p className="text-xl text-gray-400">We create value through a proven, three-stage public health intelligence process.</p>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Our Intelligence Loop</h2>
+            <p className="text-lg md:text-xl text-gray-400">We create value through a proven, three-stage public health intelligence process.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:hidden">
+            <div className="flex justify-between rounded-lg bg-gray-800 p-1 mb-6">
+              {processSteps.map((step, index) => (
+                <button
+                  key={step.name}
+                  onClick={() => setActiveTab(index)}
+                  className={`w-1/3 text-center py-3 px-2 text-sm font-semibold rounded-md transition-colors
+                    ${activeTab === index 
+                      ? 'bg-white text-black' 
+                      : 'text-gray-400 hover:text-white'
+                    }
+                  `}
+                >
+                  {step.name}
+                </button>
+              ))}
+            </div>
             
-            <div className="text-center p-8">
-              <div className="flex items-center justify-center w-20 h-20 bg-gray-800 text-white rounded-full mx-auto mb-6">
-                <FaDatabase className="w-8 h-8" />
+            <div className="text-center p-4">
+              <div className="flex items-center justify-center w-16 h-16 bg-gray-800 text-white rounded-full mx-auto mb-6">
+                {processSteps[activeTab].icon}
               </div>
-              <h3 className="text-3xl font-bold mb-2">1. Capture</h3>
-              <p className="text-lg text-gray-400 leading-relaxed">We deploy robust systems to capture structured health data from the field, ensuring integrity from the source.</p>
+              <h3 className="text-2xl font-bold mb-2">{processSteps[activeTab].name}</h3>
+              <p className="text-base text-gray-400 leading-relaxed">
+                {processSteps[activeTab].description}
+              </p>
             </div>
+          </div>
 
-            <div className="text-center p-8">
-              <div className="flex items-center justify-center w-20 h-20 bg-gray-800 text-white rounded-full mx-auto mb-6">
-                <FaChartLine className="w-8 h-8" />
+          <div className="hidden md:grid grid-cols-3 gap-8">
+            {processSteps.map((step) => (
+              <div key={step.name} className="text-center p-8">
+                <div className="flex items-center justify-center w-20 h-20 bg-gray-800 text-white rounded-full mx-auto mb-6">
+                  {step.icon}
+                </div>
+                <h3 className="text-3xl font-bold mb-2">{step.name}</h3>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  {step.description}
+                </p>
               </div>
-              <h3 className="text-3xl font-bold mb-2">2. Analyze</h3>
-              <p className="text-lg text-gray-400 leading-relaxed">Our analytics engine processes the data to identify patterns, correlations, and early warning signs.</p>
-            </div>
-
-            <div className="text-center p-8">
-              <div className="flex items-center justify-center w-20 h-20 bg-gray-800 text-white rounded-full mx-auto mb-6">
-                <FaUsersViewfinder className="w-8 h-8" />
-              </div>
-              <h3 className="text-3xl font-bold mb-2">3. Act</h3>
-              <p className="text-lg text-gray-400 leading-relaxed">We provide officials with clear, visualized insights, empowering them to take targeted, evidence-based preventive action.</p>
-            </div>
+            ))}
           </div>
           
           <div className="text-center mt-20">
@@ -130,13 +172,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-white text-black px-6 py-20 md:py-24">
+      {/* 4. CTA Section */}
+      <section className="relative z-10 bg-white text-black px-6 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Let's Build a Healthier Future, Together.
           </h2>
-          <p className="text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
             We are actively seeking partnerships with public health organizations, district administrations, and research institutions.
           </p>
           <a 
