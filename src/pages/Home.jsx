@@ -35,7 +35,7 @@ export default function Home() {
     {
       value: 1.1,
       suffix: 'M +',
-      label: "Population Coverage"
+      label: "Target Population Coverage"
     },
     {
       value: 25,
@@ -70,7 +70,7 @@ export default function Home() {
             </span>
             <span className="block mt-1 md:mt-2 text-gray-400 whitespace-nowrap">
               <span className="font-normal opacity-90 text-2xl md:text-5xl align-middle mr-1 md:mr-2">to </span>
-              <span className="font-extrabold text-4xl md:text-8xl align-middle">Health Decisions.</span>
+              <span className="font-extrabold text-4xl md:text-8xl align-middle">Health Decisions</span>
             </span>
           </h1>
 

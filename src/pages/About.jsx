@@ -146,7 +146,7 @@ export default function About() {
                   While studying and later working in technology, Megha kept returning to one question: what if someone had helped me understand my health earlier? If she had been guided sooner, she could have managed her condition before it began to interfere with her daily life.
                 </p>
                 <p>
-                  Through her own research, she discovered that nearly 70 percent of women with PCOS remain undiagnosed, and even those who are diagnosed often receive advice focused only on fertility. But PCOS is not just about fertility. It affects hormonal balance, metabolism, and mental well-being. That realization revealed a larger truth: society tends to focus on women’s health only when it is connected to motherhood, not before.
+                  At the same time, her brother Hemant, a biotechnologist deeply interested in early-stage disease detection, was developing technologies to identify health risks long before symptoms appear. His work showed how data, if used intelligently, could make healthcare proactive instead of reactive.
                 </p>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function About() {
             {/* Column 2 */}
             <div className={`space-y-6 ${isStoryExpanded ? 'block' : 'hidden'} md:block`}>
               <p>
-                At the same time, her brother Hemant, a biotechnologist deeply interested in early-stage disease detection, was developing technologies to identify health risks long before symptoms appear. His work showed how data, if used intelligently, could make healthcare proactive instead of reactive.
+                  Together, they began exploring the larger picture. Through their research, they discovered that nearly 70 percent of women with PCOS remain undiagnosed, and even those who are diagnosed often receive advice focused only on fertility. But PCOS is not just about fertility. It affects hormonal balance, metabolism, and mental well-being. That realization revealed a larger truth: society tends to focus on women’s health only when it is connected to motherhood, not before.
               </p>
 
               <blockquote className="border-l-4 border-gray-700 pl-6 py-4 my-8 md:my-10 italic text-gray-300 text-lg md:text-2xl">
@@ -163,9 +163,6 @@ export default function About() {
 
               <p>
                 In 2025, they decided to act. Megha’s lived experience and technical background joined Hemant’s expertise in biotechnology and health systems. Together, they founded HealthMobilia, a company built on a simple idea: early understanding can change the course of public health.
-              </p>
-              <p>
-                HealthMobilia partners with governments to transform scattered health data into actionable insight. Their first focus is on PCOS and mental health, conditions that shape women’s well-being long before motherhood, but their broader mission is to help public health move from health data to health decisions, enabling timely, preventive action for healthier futures.
               </p>
             </div>
           </div>

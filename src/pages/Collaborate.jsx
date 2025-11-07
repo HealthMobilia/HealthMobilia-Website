@@ -15,7 +15,7 @@ export default function Collaborate() {
     {
       value: 1.1,
       suffix: 'M+',
-      label: "Population Coverage"
+      label: "Target Population Coverage"
     },
     {
       value: 25,
