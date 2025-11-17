@@ -66,7 +66,7 @@ export default function OurWork() {
   const pilotStats = [
     { value: 1.1, suffix: 'M+', label: "Target Total Population" },
     { value: 25, suffix: '+', label: "PHCs Engaged" },
-    { value: 3, suffix: '', label: "Core Focus Areas" }
+    { value: 2, suffix: '', label: "Core Focus Areas" }
   ];
 
   return (

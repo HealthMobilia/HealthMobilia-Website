@@ -13,7 +13,6 @@ export default function Footer() {
   const focusLinks = [
     { name: "PCOS", href: "#" },
     { name: "Mental Health", href: "#" },
-    { name: "NCDs", href: "#" },
   ];
 
   const socialLinks = [

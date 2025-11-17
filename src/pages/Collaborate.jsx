@@ -23,7 +23,7 @@ export default function Collaborate() {
       label: "PHCs Engaged"
     },
     {
-      value: 3,
+      value: 2,
       suffix: '',
       label: "Core Focus Areas"
     }

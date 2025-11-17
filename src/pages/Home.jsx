@@ -43,7 +43,7 @@ export default function Home() {
       label: "PHCs Engaged"
     },
     {
-      value: 3,
+      value: 2,
       suffix: '',
       label: "Core Focus Areas"
     }
@@ -63,16 +63,19 @@ export default function Home() {
         />
 
         <div className="relative z-10 p-6 flex flex-col items-center">
-          <h1 className="leading-tight tracking-tight">
+          <h1 className="text-lg sm:text-xl md:text-2xl font-semibold text-white uppercase tracking-widest mb-4">
+            HealthMobilia
+          </h1>
+          <h2 className="leading-tight tracking-tight">
             <span className="block text-white whitespace-nowrap">
-              <span className="font-normal opacity-90 text-2xl md:text-5xl align-middle mr-1 md:mr-2">From </span>
-              <span className="font-extrabold text-4xl md:text-8xl align-middle">Health Data</span>
+              <span className="font-normal opacity-90 text-xl md:text-5xl align-middle mr-1 md:mr-2">From </span>
+              <span className="font-extrabold text-3xl md:text-7xl align-middle">Health Data</span>
             </span>
             <span className="block mt-1 md:mt-2 text-gray-400 whitespace-nowrap">
-              <span className="font-normal opacity-90 text-2xl md:text-5xl align-middle mr-1 md:mr-2">to </span>
-              <span className="font-extrabold text-4xl md:text-8xl align-middle">Health Decisions</span>
+              <span className="font-normal opacity-90 text-xl md:text-5xl align-middle mr-1 md:mr-2">To </span>
+              <span className="font-extrabold text-3xl md:text-7xl align-middle">Health Decisions</span>
             </span>
-          </h1>
+          </h2>
 
           <p className="mt-8 text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             We empower public health systems to turn raw community data into predictive insights and proactive, life-saving interventions.
