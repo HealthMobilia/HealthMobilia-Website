@@ -64,8 +64,8 @@ export default function OurWork() {
   ];
 
   const pilotStats = [
-    { value: 1.1, suffix: 'M+', label: "Target Total Population" },
-    { value: 25, suffix: '+', label: "PHCs Engaged" },
+    { value: 576, suffix: 'K+', label: "Target Total Population" },
+    { value: 25, suffix: '', label: "PHCs Engaged" },
     { value: 2, suffix: '', label: "Core Focus Areas" }
   ];
 
@@ -290,7 +290,7 @@ export default function OurWork() {
           <blockquote className="text-gray-800 italic text-xl sm:text-2xl md:text-3xl leading-relaxed mb-6 relative">
             <span className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-8xl font-serif text-gray-200 opacity-70">"</span>
             <p className="relative z-10">
-              The true value of data is not in its collection, but in its <strong>capacity to inform action</strong>—transforming hindsight into foresight.
+              The true value of data is not in its collection, but in its <strong>capacity to inform action</strong> transforming hindsight into foresight.
             </p>
           </blockquote>
           <p className="text-base md:text-lg font-semibold text-black mt-10">

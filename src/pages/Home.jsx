@@ -33,13 +33,13 @@ export default function Home() {
 
   const impactStats = [
     {
-      value: 1.1,
-      suffix: 'M +',
+      value: 576,
+      suffix: 'K+',
       label: "Target Population Coverage"
     },
     {
       value: 25,
-      suffix: '+',
+      suffix: '',
       label: "PHCs Engaged"
     },
     {

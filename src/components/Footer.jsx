@@ -37,8 +37,8 @@ export default function Footer() {
             <div className="pt-4">
               <p className="text-sm text-gray-400 mb-2">Partnership & Collaborations</p>
               <div className="flex space-x-4">
-                <div className="bg-gray-800 px-3 py-1 text-xs font-medium">25+ PHC</div>
-                <div className="bg-gray-800 px-3 py-1 text-xs font-medium">6+ Taluka</div>
+                <div className="bg-gray-800 px-3 py-1 text-xs font-medium">25 PHC</div>
+                <div className="bg-gray-800 px-3 py-1 text-xs font-medium">6 Taluka</div>
               </div>
             </div>
           </div>

@@ -13,13 +13,13 @@ export default function Collaborate() {
   // Pilot stats
   const pilotStats = [
     {
-      value: 1.1,
-      suffix: 'M+',
+      value: 576,
+      suffix: 'K+',
       label: "Target Population Coverage"
     },
     {
       value: 25,
-      suffix: '+',
+      suffix: '',
       label: "PHCs Engaged"
     },
     {
