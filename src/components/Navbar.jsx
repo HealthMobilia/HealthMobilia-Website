@@ -1,78 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const baseLink = "block px-4 py-2 transition duration-150";
-  const activeClasses = "text-black font-semibold";
-  const inactiveClasses = "text-gray-700 hover:text-gray-500";
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const linkStyle = ({ isActive }) => 
+    `text-[10px] font-bold tracking-[0.25em] uppercase transition-all duration-300 hover:text-[#94A89A] ${
+      isActive ? "text-[#94A89A]" : "text-gray-500"
+    }`;
 
   return (
-    <nav className="flex items-center justify-between px-4 md:px-6 py-4 border-b border-gray-300 bg-white sticky top-0 z-50">
-      <NavLink to="/" className="font-bold text-xl">
-        HealthMobilia
-      </NavLink>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 px-6 md:px-12 ${
+      scrolled ? "bg-[#050707]/90 backdrop-blur-xl py-4 border-b border-white/5" : "bg-transparent py-8"
+    }`}>
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <NavLink to="/" className="text-xl font-bold tracking-tighter text-[#F5F7F7]">
+          HEALTH<span className="text-[#94A89A] italic">MOBILIA</span>
+        </NavLink>
 
-      {/* Desktop Menu */}
-      <div className="hidden md:flex space-x-2 lg:space-x-4">
-        <NavLink to="/" end className={({ isActive }) => `${baseLink} ${isActive ? activeClasses : inactiveClasses}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          Home
-        </NavLink>
-        <NavLink to="/about" className={({ isActive }) => `${baseLink} ${isActive ? activeClasses : inactiveClasses}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          About Us
-        </NavLink>
-        <NavLink to="/our-work" className={({ isActive }) => `${baseLink} ${isActive ? activeClasses : inactiveClasses}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          Our Work
-        </NavLink>
-        <NavLink to="/collaborate" className={({ isActive }) => `${baseLink} ${isActive ? activeClasses : inactiveClasses}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          Pilot & Collaborations
-        </NavLink>
-        <NavLink to="/contact" className={({ isActive }) => `${baseLink} ${isActive ? activeClasses : inactiveClasses}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          Contact
-        </NavLink>
-      </div>
-
-      {/* Mobile Menu Button */}
-      <button
-        className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-400"
-        onClick={() => setMenuOpen((open) => !open)}
-        aria-label="Toggle menu"
-      >
-        <svg
-          className="w-6 h-6 text-black"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {menuOpen ? (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          ) : (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-          )}
-        </svg>
-      </button>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-md md:hidden z-40">
-          <NavLink to="/" end className={({ isActive }) => `${baseLink} ${isActive ? activeClasses : inactiveClasses}`} onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-            Home
-          </NavLink>
-          <NavLink to="/about" className={({ isActive }) => `${baseLink} ${isActive ? activeClasses : inactiveClasses}`} onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-            About
-          </NavLink>
-          <NavLink to="/our-work" className={({ isActive }) => `${baseLink} ${isActive ? activeClasses : inactiveClasses}`} onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-            Our Work
-          </NavLink>
-          <NavLink to="/collaborate" className={({ isActive }) => `${baseLink} ${isActive ? activeClasses : inactiveClasses}`} onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-            Collaborate
-          </NavLink>
-          <NavLink to="/contact" className={({ isActive }) => `${baseLink} ${isActive ? activeClasses : inactiveClasses}`} onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-            Contact
+        <div className="hidden md:flex items-center gap-10">
+          <NavLink to="/genesis" className={linkStyle}>The Genesis</NavLink>
+          <NavLink to="/intelligence" className={linkStyle}>Intelligence</NavLink>
+          <NavLink to="/collaborate" className={linkStyle}>Partnerships</NavLink>
+          <NavLink to="/contact" className="px-6 py-2 border border-[#94A89A]/30 text-[#94A89A] text-[9px] font-bold uppercase tracking-[0.2em] hover:bg-[#94A89A] hover:text-[#050707] transition-all rounded-full">
+            Inquire
           </NavLink>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

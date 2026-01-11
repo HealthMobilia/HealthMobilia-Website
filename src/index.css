@@ -2,7 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-white text-black;
-  font-family: 'Inter', sans-serif;
+@layer base {
+  body {
+    @apply bg-charcoal-950 text-paper antialiased;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    @apply bg-sage-dim text-white;
+  }
 }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { @apply bg-charcoal-950; }
+::-webkit-scrollbar-thumb { @apply bg-charcoal-700 rounded-full border-2 border-charcoal-950; }

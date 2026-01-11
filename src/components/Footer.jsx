@@ -1,18 +1,29 @@
-import { FaXTwitter, FaLinkedin, FaFacebookF, FaInstagram, FaYoutube, FaArrowRight } from 'react-icons/fa6'; 
-import { FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa'; 
+import { NavLink } from "react-router-dom";
+import { 
+  FaXTwitter, 
+  FaLinkedin, 
+  FaFacebookF, 
+  FaInstagram, 
+  FaYoutube, 
+  FaArrowRight, 
+  FaEnvelope, 
+  FaPhone, 
+  FaLocationDot // Changed from FaMapMarkerAlt
+} from 'react-icons/fa6'; 
 
 export default function Footer() {
   const companyLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "Our Work", href: "/our-work" },
-    { name: "Pilot & Collaborations", href: "/collaborate" },
+    { name: "The Genesis", href: "/genesis" },
+    { name: "Intelligence", href: "/intelligence" },
+    { name: "Partnerships", href: "/collaborate" },
     { name: "Contact", href: "/contact" },
   ];
 
   const focusLinks = [
-    { name: "PCOS", href: "#" },
-    { name: "Mental Health", href: "#" },
+    { name: "PCOS Detection", href: "/intelligence" },
+    { name: "Metabolic Health", href: "/intelligence" },
+    { name: "Reproductive Vitals", href: "/genesis" },
   ];
 
   const socialLinks = [
@@ -24,138 +35,81 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-black text-white">
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="lg:col-span-2 space-y-6">
+    <footer className="bg-[#050707] text-[#F5F7F7] border-t border-white/5 py-20 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+          
+          {/* Brand Column */}
+          <div className="lg:col-span-2 space-y-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">HealthMobilia</h3>
-              <p className="text-gray-300 text-lg text-justify leading-relaxed max-w-md">
-                HealthMobilia is transforming public health through data intelligence and analytics, building an ecosystem that supports proactive, preventive care.
+              <h3 className="text-2xl font-bold tracking-tighter mb-6">
+                HEALTH<span className="text-[#94A89A] italic">MOBILIA</span>
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed max-w-sm font-light">
+                Engineering the biological intelligence infrastructure for the missing decade of reproductive health. Transforming public health through data integrity and proactive care.
               </p>
             </div>
-            <div className="pt-4">
-              <p className="text-sm text-gray-400 mb-2">Partnership & Collaborations</p>
-              <div className="flex space-x-4">
-                <div className="bg-gray-800 px-3 py-1 text-xs font-medium">25 PHC</div>
-                <div className="bg-gray-800 px-3 py-1 text-xs font-medium">6 Taluka</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-8 md:contents">
-            <div className="space-y-6">
-              <h4 className="text-lg font-semibold text-white">Focus Areas</h4>
-              <ul className="space-y-3">
-                {focusLinks.map(link => (
-                  <li key={link.name}>
-                    <span className="text-gray-400 text-sm font-medium">
-                      {link.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-6">
-              <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-              <ul className="space-y-3">
-                {companyLinks.map(link => (
-                  <li key={link.name}>
-                    <a href={link.href} className="text-gray-400 hover:text-white transition-colors text-sm font-medium">
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>   
-          </div>
-        </div>
-
-        <div className="border-t border-gray-800 mt-16 pt-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-             <div className="space-y-6">
-              <h4 className="text-lg font-semibold text-white">Get in Touch</h4>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-9 h-9 rounded-full bg-gray-800 flex-shrink-0 flex items-center justify-center">
-                      <FaEnvelope className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-300 text-sm font-medium">Email</p>
-                      <a href="mailto:contact@healthmobilia.com" className="text-white hover:text-gray-300 transition-colors">
-                        contact@healthmobilia.com
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-9 h-9 rounded-full bg-gray-800 flex-shrink-0 flex items-center justify-center">
-                      <FaPhone className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-300 text-sm font-medium">Phone</p>
-                      <a href="tel:+919657953795" className="text-white hover:text-gray-300 transition-colors">
-                        +91 9657953795
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-9 h-9 rounded-full bg-gray-800 flex-shrink-0 flex items-center justify-center">
-                      <FaMapMarkerAlt className="w-4 h-4 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-gray-300 text-sm font-medium">Location</p>
-                      <p className="text-white">Shelubazar, Maharashtra, India</p>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-            <div className="space-y-8"> 
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-3">Start a Partnership</h4>
-                <p className="text-gray-400 text-sm mb-4">
-                  We are actively seeking collaborations with public health organizations.
-                </p>
+            
+            {/* Social Links */}
+            <div className="flex gap-4">
+              {socialLinks.map((social) => (
                 <a 
-                  href="/collaborate" 
-                  className="inline-flex items-center px-4 py-2 border border-gray-600 text-sm font-semibold text-white 
-                             hover:border-white hover:bg-white hover:text-black transition-colors rounded-sm" 
+                  key={social.name}
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border border-white/5 flex items-center justify-center rounded-full text-gray-500 hover:border-[#94A89A] hover:text-[#94A89A] transition-all duration-300"
+                  aria-label={social.name}
                 >
-                  Learn More About Partnering
-                  <FaArrowRight className="w-3 h-3 ml-2" />
+                  <social.icon className="h-4 w-4" />
                 </a>
-              </div>
-              <div className="border-t border-gray-800 pt-6"> 
-                <h4 className="text-lg font-semibold text-white mb-4">Follow Our Insights</h4>
-                <div className="flex space-x-4">
-                  {socialLinks.map(social => (
-                    <a 
-                      key={social.name}
-                      href={social.href} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="w-10 h-10 border border-gray-600 flex items-center justify-center rounded-full hover:border-white hover:bg-white hover:text-black transition-colors"
-                      aria-label={social.name}
-                    >
-                      <social.icon className="h-5 w-5" />
-                    </a>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
+          </div>
+
+          {/* Focus Areas Column */}
+          <div>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#94A89A] mb-8">Focus Areas</h4>
+            <ul className="space-y-4">
+              {focusLinks.map(link => (
+                <li key={link.name}>
+                  <NavLink to={link.href} className="text-gray-500 hover:text-[#F5F7F7] transition-colors text-xs font-medium uppercase tracking-widest">
+                    {link.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links Column */}
+          <div>
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#94A89A] mb-8">Navigation</h4>
+            <ul className="space-y-4">
+              {companyLinks.map(link => (
+                <li key={link.name}>
+                  <NavLink to={link.href} className="text-gray-500 hover:text-[#F5F7F7] transition-colors text-xs font-medium uppercase tracking-widest">
+                    {link.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} HealthMobilia. All rights reserved.
-            </p>
-            <div className="flex flex-wrap gap-6 text-sm">
-              <a href="privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-            </div>
+       
+
+        {/* Legal & Bottom Bar */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[10px] text-gray-600 uppercase tracking-widest">
+            © {new Date().getFullYear()} HealthMobilia Private Limited. All rights reserved.
+          </p>
+          <div className="flex flex-wrap gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-600">
+            <NavLink to="/privacy-policy" className="hover:text-[#94A89A] transition-colors">Privacy Policy</NavLink>
+            <NavLink to="/terms-of-service" className="hover:text-[#94A89A] transition-colors">Terms of Service</NavLink>
+            {/* <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#94A89A] animate-pulse"></span>
+              <span className="text-[#94A89A]">Stealth R&D Phase</span>
+            </div> */}
           </div>
         </div>
       </div>

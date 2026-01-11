@@ -1,143 +1,58 @@
-import { FaArrowRight, FaGlobe } from 'react-icons/fa6'; 
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock } from 'react-icons/fa'; 
-import contactVisual from '../assets/contact/hero.png'; 
+import { FaLinkedin, FaEnvelope, FaPhone, FaLocationDot } from 'react-icons/fa6';
 
 export default function Contact() {
-
   return (
-    <div className="min-h-screen bg-white text-black antialiased" lang="en">
-      
-      {/* 1. Hero Section */}
-      <section className="relative bg-gray-50 flex items-center py-20 sm:py-24 lg:min-h-[70vh] lg:py-0">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div className="bg-[#050707] text-[#F5F7F7] min-h-screen pt-40 pb-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           
-          <div className="space-y-8 z-10">
-            <div>
-              <h2 className="text-base md:text-lg font-semibold text-gray-600 uppercase tracking-wider mb-4">
-                Contact Us
-              </h2>
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight text-black">
-                <span className="whitespace-nowrap">Let's</span>
-                <span className="block mt-2 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-                  Connect
-                </span>
-              </h1>
-            </div>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-xl text-justify hyphens-auto">
-              Whether you're a public health official, a potential partner, or just have a question, we're here to talk.
-            </p>
-            <div className="h-1 w-24 bg-black"></div>
-          </div>
+          {/* Narrative & Info */}
+          <div className="space-y-16">
+            <section>
+              <p className="text-[#94A89A] tracking-[0.4em] uppercase text-[10px] font-bold mb-6 opacity-80">Contact</p>
+              <h1 className="font-serif text-5xl md:text-7xl leading-tight mb-8">Let's <span className="text-[#94A89A] italic">Connect.</span></h1>
+              <p className="text-gray-500 text-lg md:text-xl font-light leading-relaxed">
+                Whether you are a public health official, a potential partner, or an investor, we are here to discuss how we can solve the diagnostic lag together.
+              </p>
+            </section>
 
-          <div className="relative w-full h-80 lg:h-[450px] hidden md:block">
-            <div className="absolute inset-0 bg-gray-200 rounded-lg shadow-2xl overflow-hidden">
-              <img
-                src={contactVisual} 
-                alt="Greyscale collaboration visual"
-                className="w-full h-full object-cover opacity-50"
-                loading="lazy"
-              />
-               <div className="absolute inset-0 rounded-lg border-2 border-gray-300"></div>
-            </div>
-            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white border-8 border-gray-50 rounded-full z-20"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Contact Section */}
-      <section className="bg-white text-black px-6 py-16 md:py-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            
-            <div className="space-y-8">
-              
-              <div className="bg-gray-50 p-6 md:p-8 rounded-lg shadow-lg border border-gray-200">
-                <h3 className="text-2xl md:text-3xl font-bold mb-6">Contact Details</h3>
-                
-                <div className="flex items-start gap-4 mb-5">
-                  <FaMapMarkerAlt className="w-5 h-5 text-black mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-base md:text-lg font-medium text-gray-900">Address</p>
-                    <p className="text-base md:text-lg text-gray-600">
-                      Shelubazar, Maharashtra<br />
-                      PIN Code 444402
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 mb-5">
-                  <FaEnvelope className="w-5 h-5 text-black mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-base md:text-lg font-medium text-gray-900">Email</p>
-                    <a href="mailto:contact@healthmobilia.com" className="text-base md:text-lg text-gray-600 hover:text-black">
-                      contact@healthmobilia.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 mb-5">
-                  <FaPhone className="w-5 h-5 text-black mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-base md:text-lg font-medium text-gray-900">Phone</p>
-                    <a href="tel:+919657953795" className="text-base md:text-lg text-gray-600 hover:text-black">
-                      +91 9657953795
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 pt-5 border-t border-gray-200 mt-5">
-                  <FaClock className="w-5 h-5 text-black mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-base md:text-lg font-medium text-gray-900">Office Hours</p>
-                    <p className="text-base md:text-lg text-gray-600">
-                      Mon - Fri, 9:00 AM - 6:00 PM IST
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Map */}
-            <div>
-              <div className="rounded-lg shadow-lg overflow-hidden border border-gray-200">
-                <iframe
-                  title="Washim District map"
-                  src="https://www.google.com/maps?q=Shelu+Bazar+Maharashtra&output=embed"
-                  className="w-full h-80 sm:h-96 border-0 filter grayscale"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-              <div className="mt-6">
-                <p className="text-base md:text-lg text-gray-600">
-                  For all inquiries, please email us at <a href="mailto:contact@healthmobilia.com" className="font-medium text-black hover:text-gray-700">contact@healthmobilia.com</a>
+            {/* Direct Details (Kept Original as requested) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-white/5 pt-16">
+              <div className="space-y-4">
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-600 flex items-center gap-2">
+                  <FaLocationDot className="text-[#94A89A]" /> Headquarters
+                </h4>
+                <p className="text-sm font-light leading-relaxed text-gray-400">
+                  Shelubazar, Maharashtra,<br />
+                  India. PIN 444402
                 </p>
               </div>
+              <div className="space-y-4">
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-600 flex items-center gap-2">
+                  <FaEnvelope className="text-[#94A89A]" /> Email
+                </h4>
+                <a href="mailto:contact@healthmobilia.com" className="text-sm font-light text-gray-400 hover:text-[#94A89A]">
+                  contact@healthmobilia.com
+                </a>
+              </div>
+              <div className="space-y-4">
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-600 flex items-center gap-2">
+                  <FaPhone className="text-[#94A89A]" /> Phone
+                </h4>
+                <a href="tel:+919657953795" className="text-sm font-light text-gray-400 hover:text-[#94A89A]">
+                  +91 9657953795
+                </a>
+              </div>
             </div>
-
           </div>
-        </div>
-      </section>
-      
-      {/* 3. Final Statement Section */}
-      <section className="bg-black text-white px-6 py-20 md:py-32">
-        <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Our Mission: Data-Driven Prevention
-            </h2>
-            <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-              Every inquiry, every partnership, and every data point is another step towards a future where healthcare is predictive, not reactive.
-            </p>
-            <a 
-              href="/work" 
-              className="inline-flex items-center justify-center rounded-lg border-2 border-gray-600 px-6 py-3 text-base font-semibold text-gray-200 transition-colors hover:border-white hover:text-white"
-            >
-              See Our Work in Action
-              <FaArrowRight className="w-4 h-4 ml-3" />
-            </a>
-        </div>
-      </section>
 
+          {/* Optional: Simple Inquiry Form Placeholder or an Image */}
+          <div className="bg-[#0A0C0C] border border-white/5 rounded-[3rem] p-12 flex items-center justify-center">
+             <p className="text-gray-700 text-sm font-serif italic uppercase tracking-widest">HealthMobilia Intelligence Network</p>
+          </div>
+
+        </div>
+      </div>
     </div>
   );
 }
