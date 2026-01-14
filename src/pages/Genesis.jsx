@@ -80,28 +80,6 @@ export default function Genesis() {
 
         </div>
 
-        {/* TEAM FOOTER */}
-        <div className="mt-40 pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex gap-8">
-            <div className="text-center">
-              <p className="text-white font-bold text-sm mb-2">Megha Bothe</p>
-              <div className="flex justify-center gap-4 text-gray-600">
-                <a href="https://www.linkedin.com/in/meghabothe/" className="hover:text-[#94A89A] transition-colors"><FaLinkedin size={18} /></a>
-                <a href="mailto:meghabothe@gmail.com" className="hover:text-[#94A89A] transition-colors"><FaEnvelope size={18} /></a>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="text-white font-bold text-sm mb-2">Hemant Bothe</p>
-              <div className="flex justify-center gap-4 text-gray-600">
-                <a href="https://linkedin.com/in/hemantbothe" className="hover:text-[#94A89A] transition-colors"><FaLinkedin size={18} /></a>
-                <a href="mailto:hemantbothe@gmail.com" className="hover:text-[#94A89A] transition-colors"><FaEnvelope size={18} /></a>
-              </div>
-            </div>
-          </div>
-          <p className="text-[10px] text-gray-600 uppercase tracking-widest">
-            HealthMobilia Intelligence • 2025
-          </p>
-        </div>
       </div>
     </div>
   );
