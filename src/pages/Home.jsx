@@ -10,7 +10,7 @@ export default function Home() {
 
   // Adjusted for Dark Theme (White/Sage nodes on Dark BG)
   const networkParticlesConfig = {
-    fullScreen: { enable: false }, // CRITICAL: Ensures particles stay inside the container, not the whole screen
+    fullScreen: { enable: false }, 
     background: { color: { value: "transparent" } }, 
     fpsLimit: 60,
     interactivity: {
@@ -87,7 +87,7 @@ export default function Home() {
 
           {/* Sub-headline */}
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light">
-            We empower public health systems to translate raw community signals into predictive insights and proactive, life-saving interventions.
+            We empower public health systems to translate raw community signals into predictive insights and proactive, life-saving interventions
           </p>
 
         </div>
