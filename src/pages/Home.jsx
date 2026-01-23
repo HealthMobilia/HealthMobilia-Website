@@ -75,7 +75,7 @@ export default function Home() {
           {/* Tagline */}
           <div className="inline-block mb-8 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
             <span className="text-xs md:text-sm font-semibold text-emerald-400 tracking-widest uppercase">
-              Advancing the One Health Approach
+              Health Data to Health Decisions
             </span>
           </div>
 
