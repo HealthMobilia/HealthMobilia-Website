@@ -3,10 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+
   body {
     @apply bg-charcoal-950 text-paper antialiased;
     font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
   }
 
   ::selection {
